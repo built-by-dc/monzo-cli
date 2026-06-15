@@ -1,12 +1,12 @@
 [package]
 name = "monzo-cli"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
-authors = ["Cesar Ferreira"]
+authors = ["Cesar Ferreira", "built-by-dc"]
 description = "A modern CLI for Monzo Bank - query balances, transactions, pots, and get spending insights"
 license = "MIT"
-repository = "https://github.com/cesarferreira/monzo-cli"
-homepage = "https://github.com/cesarferreira/monzo-cli"
+repository = "https://github.com/built-by-dc/monzo-cli"
+homepage = "https://github.com/built-by-dc/monzo-cli"
 keywords = ["monzo", "banking", "cli", "finance"]
 categories = ["command-line-utilities"]
 

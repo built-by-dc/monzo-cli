@@ -18,9 +18,13 @@ pub struct Config {
 
 impl Config {
     pub fn config_dir() -> Result<PathBuf> {
-        let dirs = ProjectDirs::from("com", "cesarferreira", "monzo-cli")
-            .context("could not determine config directory")?;
-        let dir = dirs.config_dir().to_path_buf();
+        let dir = if let Ok(override_dir) = std::env::var("MONZO_CONFIG_DIR") {
+            PathBuf::from(override_dir)
+        } else {
+            let dirs = ProjectDirs::from("com", "cesarferreira", "monzo-cli")
+                .context("could not determine config directory")?;
+            dirs.config_dir().to_path_buf()
+        };
         fs::create_dir_all(&dir)?;
         Ok(dir)
     }
